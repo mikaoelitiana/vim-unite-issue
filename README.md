@@ -74,7 +74,8 @@ let g:unite_source_issue_github_state_table = {
 ##### Configuration
 ```viml
 let g:jira_url = 'https://bugs.acme.com'
-let g:jira_username = 'roadrunner'
+let g:jira_username = 'roadrunner@acme.com'
+let g:jira_assignee = 'roadrunner'
 let g:jira_password = 'meemeep'
 
 " Customize
