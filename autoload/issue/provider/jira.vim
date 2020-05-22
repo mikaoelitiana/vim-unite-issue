@@ -149,7 +149,7 @@ function! s:fetch_issues(jql) " {{{
 	let res = webapi#http#get(url, {}, headers)
 
 	if res.status !~ '^2.*'
-		return { 'issues' : [], 'error': 'Failed to fetch JIRA issue list' }
+		return { 'issues' : [], 'error': printf('Failed to fetch JIRA issue list (%s - %s)', res.status, res.content) }
 	endif
 
 	return webapi#json#decode(res.content)
