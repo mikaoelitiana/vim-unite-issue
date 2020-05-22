@@ -113,7 +113,8 @@ function! s:jira_build_jql(elements, ...) "{{{
 			let jql=jql.jql_part
 		endif
 	endfor
-	return substitute(jql, " ", "+","g")
+	let jql_without_equals = substitute(jql, "=", "%3D","g")
+	return substitute(jql_without_equals, " ", "%20","g")
 endfunction
 
 "	}}}
